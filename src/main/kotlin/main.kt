@@ -12,14 +12,13 @@ fun main(args : Array<String>) {
 class Caesar (val plainText: String, shift: Int) {
     val key = shift % 26
     var result = ""
-    var c: Char = plainText.get(0)
     var i = 0
     // Encipher a string by rotating all characters by k spaces
     fun encipher() : String {
         if(i == plainText.length) {
             return result
         }
-        c = plainText.get(i)
+        val c = plainText.get(i)
         var char: Char
         // If the character is alphabetical, shift it by key amount, otherwise do not change it
         if (c in 'a'..'z' || c in 'A'..'Z') {
